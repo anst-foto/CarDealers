@@ -1,0 +1,19 @@
+﻿[
+  {
+    "Car": "Ford Mustang",
+    "Year": 2019,
+    "SalesByMonth": {
+      "January": 2000000,
+      "February": 2000000,
+      "December": 2000000
+    }
+  },
+  {
+    "Car": "Ford Mustang",
+    "Year": 2020,
+    "SalesByMonth": {
+      "March": 20000000,
+      "May": 1000000
+    }
+  }
+]

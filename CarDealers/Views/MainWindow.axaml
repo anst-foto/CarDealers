@@ -1,0 +1,56 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:viewModels="clr-namespace:CarDealers.ViewModels"
+
+        x:Class="CarDealers.Views.MainWindow"
+        x:DataType="viewModels:MainWindowViewModel"
+
+        Icon="/Assets/avalonia-logo.ico"
+        Title="CarDealers"
+
+        WindowState="Maximized">
+
+    <Window.DataContext>
+        <viewModels:MainWindowViewModel />
+    </Window.DataContext>
+
+    <DockPanel LastChildFill="True">
+        <StackPanel Orientation="Horizontal"
+                    DockPanel.Dock="Top">
+            <Label Content="Файл"
+                   Target="{Binding ElementName=InputFilePath}"/>
+            <TextBox x:Name="InputFilePath"
+                     IsReadOnly="True"
+                     Text="{Binding FilePath}"/>
+            <Button Content="Выбрать файл"
+                    Command="{Binding OpenFileCommand}"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal"
+                    DockPanel.Dock="Top">
+            <Label Content="Выберите _год"
+                   Target="{Binding ElementName=SelectYears}"/>
+            <ComboBox x:Name="SelectYears" ItemsSource="{Binding Years}"
+                      SelectedItem="{Binding SelectedYear}" />
+        </StackPanel>
+
+        <DataGrid ItemsSource="{Binding Sales}"
+                  AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Авто" Binding="{Binding Car}"/>
+                <DataGridTextColumn Header="Январь" Binding="{Binding January}"/>
+                <DataGridTextColumn Header="Февраль" Binding="{Binding February}"/>
+                <DataGridTextColumn Header="Март" Binding="{Binding March}"/>
+                <DataGridTextColumn Header="Апрель" Binding="{Binding April}"/>
+                <DataGridTextColumn Header="Май" Binding="{Binding May}"/>
+                <DataGridTextColumn Header="Июнь" Binding="{Binding June}"/>
+                <DataGridTextColumn Header="Июль" Binding="{Binding July}"/>
+                <DataGridTextColumn Header="Август" Binding="{Binding August}"/>
+                <DataGridTextColumn Header="Сентябрь" Binding="{Binding September}"/>
+                <DataGridTextColumn Header="Октябрь" Binding="{Binding October}"/>
+                <DataGridTextColumn Header="Ноябрь" Binding="{Binding November}"/>
+                <DataGridTextColumn Header="Декабрь" Binding="{Binding December}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
+</Window>
